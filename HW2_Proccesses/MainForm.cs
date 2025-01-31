@@ -60,8 +60,14 @@ namespace HW2_Proccesses
         {
            proc.StartInfo.Arguments = TextBoxCount.Text;
             //proc.Start();
-            StartProcessButton_Click(sender,e); //here we got all buttons ruled already.
-           
+            StartProcessButton_Click(sender,e); //here we got all buttons ruled already.      
         }
+
+        private void WordCountButton_Click(object sender, EventArgs e) // 4
+        {
+            proc.StartInfo.Arguments = $"{PathTextBox.Text} {WordTextBox.Text}"; // just different arguments were given.
+            StartProcessButton_Click(sender, e);
+        }
+
     }// END OF FORM
 }
