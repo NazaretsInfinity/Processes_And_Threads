@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
+using System.IO;
 
 namespace HW2_Proccesses
 {
@@ -28,6 +29,7 @@ namespace HW2_Proccesses
       
         private void StartProcessButton_Click(object sender, EventArgs e) //1 
         {
+           proc.StartInfo.UseShellExecute = false;
            StartProcessButton.Enabled = false;
             proc.Start();
             if(MessageBox(IntPtr.Zero, "ChildProccess started. Wish to close it yourself?", "decision.", 3)== 7)
@@ -54,6 +56,12 @@ namespace HW2_Proccesses
                 StartProcessButton.Enabled = true;
         }
 
-
+        private void CountButton_Click(object sender, EventArgs e) //3
+        {
+           proc.StartInfo.Arguments = TextBoxCount.Text;
+            //proc.Start();
+            StartProcessButton_Click(sender,e); //here we got all buttons ruled already.
+           
+        }
     }// END OF FORM
 }
