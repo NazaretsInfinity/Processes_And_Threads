@@ -53,6 +53,7 @@
             // 
             // StopChildProccess
             // 
+            this.StopChildProccess.Enabled = false;
             this.StopChildProccess.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.StopChildProccess.Location = new System.Drawing.Point(12, 98);
             this.StopChildProccess.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -76,7 +77,7 @@
             // 
             this.CountButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.CountButton.Location = new System.Drawing.Point(12, 265);
-            this.CountButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CountButton.Margin = new System.Windows.Forms.Padding(4);
             this.CountButton.Name = "CountButton";
             this.CountButton.Size = new System.Drawing.Size(237, 44);
             this.CountButton.TabIndex = 3;

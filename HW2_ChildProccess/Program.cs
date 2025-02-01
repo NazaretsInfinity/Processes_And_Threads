@@ -27,7 +27,7 @@ namespace HW2_ChildProccess
             try // because we don't know what you can enter...
             {
                 StreamReader reader = new StreamReader(args[0]);
-                string[] chto = { $"{args[1]}" }; //idk I didn't find Split(0 that wuld take simple string
+                string[] chto = { $"{args[1]}" }; //idk I didn't find Split() that would take simple string as arg
                 Console.WriteLine($"Quanity of word : {reader.ReadToEnd().Split(chto, 0).Length - 1}");
                 reader.Close();
             }

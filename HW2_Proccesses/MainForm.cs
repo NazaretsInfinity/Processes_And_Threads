@@ -23,14 +23,14 @@ namespace HW2_Proccesses
         {
             InitializeComponent();
             proc.StartInfo = new ProcessStartInfo("HW2_ChildProccess");
-            StopChildProccess.Enabled = false;
+         
         }
 
       
         private void StartProcessButton_Click(object sender, EventArgs e) //1 
         {
-           proc.StartInfo.UseShellExecute = false;
-           StartProcessButton.Enabled = false;
+          
+            StartProcessButton.Enabled = false;
             proc.Start();
             if(MessageBox(IntPtr.Zero, "ChildProccess started. Wish to close it yourself?", "decision.", 3)== 7)
             {
