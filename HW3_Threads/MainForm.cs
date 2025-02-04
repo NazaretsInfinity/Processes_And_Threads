@@ -27,15 +27,14 @@ namespace HW3_Threads
             {
                 tr.Abort();
                 button1.Text = "Start primary numbers generation";
-                activity = false;
             }
             else
             {
-                tr = new Thread(PrimaryGeneration); 
+                tr = new Thread(PrimaryGeneration);
                 tr.Start();
                 button1.Text = "Stop";
-                activity = true;
             }
+            activity = !activity;
             
         }
         private void FibonacciButton_Click(object sender, EventArgs e) //2 
