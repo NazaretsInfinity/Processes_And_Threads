@@ -27,14 +27,16 @@ namespace HW3_Threads
             {
                 tr.Abort();
                 button1.Text = "Start primary numbers generation";
+                activity = false;
             }
             else
             {
                 tr = new Thread(PrimaryGeneration); 
                 tr.Start();
                 button1.Text = "Stop";
+                activity = true;
             }
-            activity = !activity; 
+            
         }
         private void FibonacciButton_Click(object sender, EventArgs e) //2 
         {
@@ -73,9 +75,26 @@ namespace HW3_Threads
             }
         }
 
-        private void buttonClear_Click(object sender, EventArgs e)  //4 as if Restart. it's a simple clear actually 
+        private void buttonClear_Click(object sender, EventArgs e)  
         {
-            this.Invoke(new Action(() => OutputTextBox.Clear())); // using NumericUpDown for borders of output txt box => can choose it anytime after stopping the thread
-        } 
+                this.Invoke(new Action(() => OutputTextBox.Clear()));   
+        }
+
+        private void PausePrime_Click(object sender, EventArgs e)  //4 pause
+        {
+            if(activity)
+            {
+                tr.Suspend();
+                this.Invoke(new Action(() => PausePrime.Text = "Resume"));
+                button1.Enabled = false;
+                
+            }
+            if(tr.ThreadState == ThreadState.Suspended)
+            {
+                tr.Resume();
+                this.Invoke(new Action(() => PausePrime.Text = "Pause"));
+                button1.Enabled = true;
+            }
+        }
     }
 }

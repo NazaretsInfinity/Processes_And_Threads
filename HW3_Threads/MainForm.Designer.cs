@@ -122,11 +122,12 @@
             this.PausePrime.TabIndex = 7;
             this.PausePrime.Text = "Pause";
             this.PausePrime.UseVisualStyleBackColor = true;
+            this.PausePrime.Click += new System.EventHandler(this.PausePrime_Click);
             // 
             // PauseFibo
             // 
             this.PauseFibo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PauseFibo.Location = new System.Drawing.Point(12, 242);
+            this.PauseFibo.Location = new System.Drawing.Point(13, 242);
             this.PauseFibo.Name = "PauseFibo";
             this.PauseFibo.Size = new System.Drawing.Size(96, 34);
             this.PauseFibo.TabIndex = 8;
