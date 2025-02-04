@@ -86,7 +86,7 @@ namespace HW3_Threads
             {
                 tr.Suspend();
                 this.Invoke(new Action(() => PausePrime.Text = "Resume"));
-                button1.Enabled = false;
+                button1.Enabled = false; // to avoid error if we try to stop suspended thread.
                 
             }
             if(tr.ThreadState == ThreadState.Suspended)
