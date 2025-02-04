@@ -28,8 +28,7 @@ namespace HW2_Proccesses
 
       
         private void StartProcessButton_Click(object sender, EventArgs e) //1 
-        {
-          
+        {    
             StartProcessButton.Enabled = false;
             proc.Start();
             if(MessageBox(IntPtr.Zero, "ChildProccess started. Wish to close it yourself?", "decision.", 3)== 7)
