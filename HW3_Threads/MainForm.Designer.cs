@@ -35,6 +35,9 @@
             this.NumericEnd = new System.Windows.Forms.NumericUpDown();
             this.OutputTextBox = new System.Windows.Forms.TextBox();
             this.FibonacciButton = new System.Windows.Forms.Button();
+            this.PausePrime = new System.Windows.Forms.Button();
+            this.PauseFibo = new System.Windows.Forms.Button();
+            this.buttonClear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.NumericStart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericEnd)).BeginInit();
             this.SuspendLayout();
@@ -110,11 +113,45 @@
             this.FibonacciButton.UseVisualStyleBackColor = true;
             this.FibonacciButton.Click += new System.EventHandler(this.FibonacciButton_Click);
             // 
+            // PausePrime
+            // 
+            this.PausePrime.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PausePrime.Location = new System.Drawing.Point(13, 202);
+            this.PausePrime.Name = "PausePrime";
+            this.PausePrime.Size = new System.Drawing.Size(96, 34);
+            this.PausePrime.TabIndex = 7;
+            this.PausePrime.Text = "Pause";
+            this.PausePrime.UseVisualStyleBackColor = true;
+            // 
+            // PauseFibo
+            // 
+            this.PauseFibo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.PauseFibo.Location = new System.Drawing.Point(12, 242);
+            this.PauseFibo.Name = "PauseFibo";
+            this.PauseFibo.Size = new System.Drawing.Size(96, 34);
+            this.PauseFibo.TabIndex = 8;
+            this.PauseFibo.Text = "Pause";
+            this.PauseFibo.UseVisualStyleBackColor = true;
+            // 
+            // buttonClear
+            // 
+            this.buttonClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonClear.Location = new System.Drawing.Point(310, 202);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(96, 34);
+            this.buttonClear.TabIndex = 9;
+            this.buttonClear.Text = "Clear";
+            this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(419, 310);
+            this.Controls.Add(this.buttonClear);
+            this.Controls.Add(this.PauseFibo);
+            this.Controls.Add(this.PausePrime);
             this.Controls.Add(this.FibonacciButton);
             this.Controls.Add(this.OutputTextBox);
             this.Controls.Add(this.NumericEnd);
@@ -140,6 +177,9 @@
         private System.Windows.Forms.NumericUpDown NumericEnd;
         private System.Windows.Forms.TextBox OutputTextBox;
         private System.Windows.Forms.Button FibonacciButton;
+        private System.Windows.Forms.Button PausePrime;
+        private System.Windows.Forms.Button PauseFibo;
+        private System.Windows.Forms.Button buttonClear;
     }
 }
 
