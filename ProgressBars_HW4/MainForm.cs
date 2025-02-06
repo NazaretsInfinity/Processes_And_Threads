@@ -15,7 +15,8 @@ namespace ProgressBars_HW4
     {
         List<ProgressBar> bars = new List<ProgressBar>();
         bool activity = false;
-      
+        Task task;
+
         public MainForm()
         {
             InitializeComponent();
@@ -23,15 +24,13 @@ namespace ProgressBars_HW4
 
         private async void ButtonStart_Click(object sender, EventArgs e)
         {
-            if (activity)
+            activity = !activity;
+            if (!activity)
             {
-
-                lock(bars)
-                {
-                    for (int i = 0; i < bars.Count; ++i)
+                await task;
+                for (int i = 0; i < bars.Count; ++i)
                         this.Controls.RemoveByKey("ProgressBar" + i);
-                    bars.Clear(); 
-                }
+                    bars.Clear();
             }
             else
             {
@@ -44,23 +43,19 @@ namespace ProgressBars_HW4
                     this.Controls.Add(bar);
                     bars.Add(bar);
                 }
-                ThreadPool.QueueUserWorkItem(new WaitCallback(FillBars));
-               
+                //ThreadPool.QueueUserWorkItem(new WaitCallback(FillBars));
+                task = Task.Run(FillBars);
             }
-                activity = !activity;
-  
+         
+            
         }
 
         //METHODS
-        private void FillBars(object a)
+        private void FillBars()
         {
           while (activity)
-          {
-                   foreach (ProgressBar bar in bars)
-                        this.Invoke(new Action(() => bar.Value = new Random().Next(50, 70))); 
-                
-                
-           } 
+                    foreach (ProgressBar bar in bars)
+                        this.Invoke(new Action(() => bar.Value = new Random().Next(50, 70)));
         }
     }
 }
