@@ -23,7 +23,7 @@ namespace ProgressBars_HW4
             InitializeComponent();
         }
 
-        private async void ButtonStart_Click(object sender, EventArgs e)
+        private void ButtonStart_Click(object sender, EventArgs e)
         {
 #if true1 // dancing bars
             
@@ -65,6 +65,20 @@ namespace ProgressBars_HW4
         
         }
 
+        private async void CountButton_Click(object sender, EventArgs e)
+        {
+            int s = -1;
+            if (Int32.TryParse(NumberTextBox.Text, out s))
+            {
+                Task<string> task = Task<string>.Run(FibonacciCount);
+                await task;
+                FibonacciTextBox.Text = task.Result;
+            }
+            else MessageBox.Show("Type the end border correctly", "error", MessageBoxButtons.OK);
+        }
+
+
+
         //METHODS
         private void FillBars()
         {  
@@ -87,6 +101,19 @@ namespace ProgressBars_HW4
                 Thread.Sleep(100);
             }
            
+        }
+
+        private string FibonacciCount()
+        {
+            string result = "";
+            int a = 0; int b = 1;
+            while (a < Int32.Parse(NumberTextBox.Text))
+            {
+                int n = a + b; a = b; b = n;
+                result += $"{a} ";
+                Thread.Sleep(100);
+            }
+            return result;
         }
     }
 }
