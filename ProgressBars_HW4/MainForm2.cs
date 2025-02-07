@@ -27,10 +27,8 @@ namespace ProgressBars_HW4
             await SourceStream.ReadAsync(result, 0, (int)SourceStream.Length);
 
             string line = System.Text.Encoding.ASCII.GetString(result);
-         
-
             string[] chto = { $"{WordTextBox.Text}" }; // just copied that from my past homework nevermind 
-            StripStatusLabel.Text = $"Amount of {WordTextBox.Text} word  in file is { line.Split(chto, 0).Length - 1}";
+            StripStatusLabel.Text = $"Amount of '{WordTextBox.Text}' word  in file is { line.Split(chto, 0).Length - 1}";
 
             SourceStream.Close();
             SourceStream.Dispose();
