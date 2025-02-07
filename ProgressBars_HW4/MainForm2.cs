@@ -20,7 +20,7 @@ namespace ProgressBars_HW4
 
         private async void SearchButton_Click(object sender, EventArgs e)
         {
-            string filename = $"@{PathTextBox.Text}";
+            string filename = PathTextBox.Text;
             FileStream SourceStream = File.Open(PathTextBox.Text, FileMode.Open);
             byte[] result = new byte[SourceStream.Length];
 
@@ -31,6 +31,9 @@ namespace ProgressBars_HW4
 
             string[] chto = { $"{WordTextBox.Text}" }; // just copied that from my past homework nevermind 
             StripStatusLabel.Text = $"Amount of {WordTextBox.Text} word  in file is { line.Split(chto, 0).Length - 1}";
+
+            SourceStream.Close();
+            SourceStream.Dispose();
     }
 
     }
