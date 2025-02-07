@@ -35,6 +35,7 @@
             this.NumberTextBox = new System.Windows.Forms.TextBox();
             this.BorderLabel = new System.Windows.Forms.Label();
             this.CountButton = new System.Windows.Forms.Button();
+            this.StartSecond = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.NumericBars)).BeginInit();
             this.SuspendLayout();
             // 
@@ -107,11 +108,23 @@
             this.CountButton.UseVisualStyleBackColor = true;
             this.CountButton.Click += new System.EventHandler(this.CountButton_Click);
             // 
+            // StartSecond
+            // 
+            this.StartSecond.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.StartSecond.Location = new System.Drawing.Point(333, 50);
+            this.StartSecond.Name = "StartSecond";
+            this.StartSecond.Size = new System.Drawing.Size(98, 55);
+            this.StartSecond.TabIndex = 7;
+            this.StartSecond.Text = "2nd Task";
+            this.StartSecond.UseVisualStyleBackColor = true;
+            this.StartSecond.Click += new System.EventHandler(this.StartSecond_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(445, 343);
+            this.Controls.Add(this.StartSecond);
             this.Controls.Add(this.CountButton);
             this.Controls.Add(this.BorderLabel);
             this.Controls.Add(this.NumberTextBox);
@@ -136,6 +149,7 @@
         private System.Windows.Forms.TextBox NumberTextBox;
         private System.Windows.Forms.Label BorderLabel;
         private System.Windows.Forms.Button CountButton;
+        private System.Windows.Forms.Button StartSecond;
     }
 }
 

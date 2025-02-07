@@ -102,18 +102,21 @@ namespace ProgressBars_HW4
             }
            
         }
-
         private string FibonacciCount()
         {
             string result = "";
             int a = 0; int b = 1;
-            while (a < Int32.Parse(NumberTextBox.Text))
+            while (b < Int32.Parse(NumberTextBox.Text))
             {
                 int n = a + b; a = b; b = n;
                 result += $"{a} ";
-                Thread.Sleep(100);
             }
             return result;
+        }
+
+        private void StartSecond_Click(object sender, EventArgs e) // with files 
+        {
+            new MainForm2().Show(); 
         }
     }
 }
